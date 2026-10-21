@@ -6,42 +6,52 @@ namespace GUI26101402
         {
             InitializeComponent();
             btnAdd.Click += BtnAddClick;
-            btnSub.Click += BtnSubClick;
-            btnMult.Click += BtnMultClick;
-            btnDiv.Click += BtnDivClick;
+
+            nudOp1.ValueChanged += NudValueChanged;
+            nudOp2.ValueChanged += NudValueChanged;
+
+            //btnSub.Click += BtnSubClick;
+            //btnMult.Click += BtnMultClick;
+            //btnDiv.Click += BtnDivClick;
         }
 
-        private void BtnDivClick(object? sender, EventArgs e)
+        private void NudValueChanged(object? sender, EventArgs e)
         {
-            int op1 = int.Parse(txt1stOp.Text);
-            int op2 = int.Parse(txt2ndOp.Text);
-
-            if (op2 == 0) txtResult.Text = "NaN";
-            else txtResult.Text = $"{op1 / (float)op2:0.00}";
+            lblResult.Text = string.Empty;
         }
+        #region szemét
+        //private void BtnDivClick(object? sender, EventArgs e)
+        //{
+        //    int op1 = int.Parse(txt1stOp.Text);
+        //    int op2 = int.Parse(txt2ndOp.Text);
 
-        private void BtnMultClick(object? sender, EventArgs e)
-        {
-            int op1 = int.Parse(txt1stOp.Text);
-            int op2 = int.Parse(txt2ndOp.Text);
+        //    if (op2 == 0) txtResult.Text = "NaN";
+        //    else txtResult.Text = $"{op1 / (double)op2:0.00}";
+        //}
 
-            txtResult.Text = $"{op1 * op2}";
-        }
+        //private void BtnMultClick(object? sender, EventArgs e)
+        //{
+        //    int op1 = int.Parse(txt1stOp.Text);
+        //    int op2 = int.Parse(txt2ndOp.Text);
 
-        private void BtnSubClick(object? sender, EventArgs e)
-        {
-            int op1 = int.Parse(txt1stOp.Text);
-            int op2 = int.Parse(txt2ndOp.Text);
+        //    txtResult.Text = $"{op1 * op2}";
+        //}
 
-            txtResult.Text = $"{op1 - op2}";
-        }
+        //private void BtnSubClick(object? sender, EventArgs e)
+        //{
+        //    int op1 = int.Parse(txt1stOp.Text);
+        //    int op2 = int.Parse(txt2ndOp.Text);
+
+        //    txtResult.Text = $"{op1 - op2}";
+        //}
+        #endregion
 
         private void BtnAddClick(object? sender, EventArgs e)
         {
-            int op1 = int.Parse(txt1stOp.Text);
-            int op2 = int.Parse(txt2ndOp.Text);
+            decimal op1 = nudOp1.Value;
+            decimal op2 = nudOp2.Value;
 
-            txtResult.Text = $"{op1 + op2}";
+            lblResult.Text = $"{op1 + op2}";
         }
     }
 }

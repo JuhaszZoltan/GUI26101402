@@ -28,33 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txt1stOp = new TextBox();
-            txt2ndOp = new TextBox();
             label2 = new Label();
             label3 = new Label();
             btnAdd = new Button();
             btnSub = new Button();
             btnMult = new Button();
             btnDiv = new Button();
-            txtResult = new TextBox();
             label1 = new Label();
+            nudOp1 = new NumericUpDown();
+            nudOp2 = new NumericUpDown();
+            lblResult = new Label();
+            ((System.ComponentModel.ISupportInitialize)nudOp1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudOp2).BeginInit();
             SuspendLayout();
-            // 
-            // txt1stOp
-            // 
-            txt1stOp.Location = new Point(14, 88);
-            txt1stOp.Margin = new Padding(5, 6, 5, 6);
-            txt1stOp.Name = "txt1stOp";
-            txt1stOp.Size = new Size(112, 36);
-            txt1stOp.TabIndex = 0;
-            // 
-            // txt2ndOp
-            // 
-            txt2ndOp.Location = new Point(171, 88);
-            txt2ndOp.Margin = new Padding(5, 6, 5, 6);
-            txt2ndOp.Name = "txt2ndOp";
-            txt2ndOp.Size = new Size(112, 36);
-            txt2ndOp.TabIndex = 0;
             // 
             // label2
             // 
@@ -93,6 +79,7 @@
             btnSub.Name = "btnSub";
             btnSub.Size = new Size(125, 50);
             btnSub.TabIndex = 2;
+            btnSub.TabStop = false;
             btnSub.Text = "sub";
             btnSub.UseVisualStyleBackColor = true;
             // 
@@ -102,6 +89,7 @@
             btnMult.Name = "btnMult";
             btnMult.Size = new Size(125, 50);
             btnMult.TabIndex = 2;
+            btnMult.TabStop = false;
             btnMult.Text = "mult";
             btnMult.UseVisualStyleBackColor = true;
             // 
@@ -111,17 +99,9 @@
             btnDiv.Name = "btnDiv";
             btnDiv.Size = new Size(125, 50);
             btnDiv.TabIndex = 2;
+            btnDiv.TabStop = false;
             btnDiv.Text = "div";
             btnDiv.UseVisualStyleBackColor = true;
-            // 
-            // txtResult
-            // 
-            txtResult.Location = new Point(92, 358);
-            txtResult.Margin = new Padding(5, 6, 5, 6);
-            txtResult.Name = "txtResult";
-            txtResult.Size = new Size(112, 36);
-            txtResult.TabIndex = 0;
-            txtResult.TextAlign = HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -134,11 +114,48 @@
             label1.Text = "result:";
             label1.TextAlign = ContentAlignment.BottomCenter;
             // 
+            // nudOp1
+            // 
+            nudOp1.DecimalPlaces = 2;
+            nudOp1.Location = new Point(14, 102);
+            nudOp1.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
+            nudOp1.Minimum = new decimal(new int[] { 10000000, 0, 0, int.MinValue });
+            nudOp1.Name = "nudOp1";
+            nudOp1.Size = new Size(123, 36);
+            nudOp1.TabIndex = 0;
+            nudOp1.TextAlign = HorizontalAlignment.Right;
+            nudOp1.ThousandsSeparator = true;
+            // 
+            // nudOp2
+            // 
+            nudOp2.DecimalPlaces = 2;
+            nudOp2.Location = new Point(160, 102);
+            nudOp2.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
+            nudOp2.Minimum = new decimal(new int[] { 10000000, 0, 0, int.MinValue });
+            nudOp2.Name = "nudOp2";
+            nudOp2.Size = new Size(123, 36);
+            nudOp2.TabIndex = 1;
+            nudOp2.TextAlign = HorizontalAlignment.Right;
+            nudOp2.ThousandsSeparator = true;
+            // 
+            // lblResult
+            // 
+            lblResult.BackColor = Color.White;
+            lblResult.BorderStyle = BorderStyle.FixedSingle;
+            lblResult.Location = new Point(86, 352);
+            lblResult.Name = "lblResult";
+            lblResult.Size = new Size(125, 44);
+            lblResult.TabIndex = 4;
+            lblResult.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(297, 427);
+            Controls.Add(lblResult);
+            Controls.Add(nudOp2);
+            Controls.Add(nudOp1);
             Controls.Add(btnDiv);
             Controls.Add(btnSub);
             Controls.Add(btnMult);
@@ -146,28 +163,25 @@
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(label2);
-            Controls.Add(txtResult);
-            Controls.Add(txt2ndOp);
-            Controls.Add(txt1stOp);
             Font = new Font("Segoe UI", 16F);
             Margin = new Padding(5, 6, 5, 6);
             Name = "FrmMain";
             Text = "basic operations";
+            ((System.ComponentModel.ISupportInitialize)nudOp1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudOp2).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private TextBox txt1stOp;
-        private TextBox txt2ndOp;
         private Label label2;
         private Label label3;
         private Button btnAdd;
         private Button btnSub;
         private Button btnMult;
         private Button btnDiv;
-        private TextBox txtResult;
         private Label label1;
+        private NumericUpDown nudOp1;
+        private NumericUpDown nudOp2;
+        private Label lblResult;
     }
 }
